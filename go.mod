@@ -1,4 +1,4 @@
-module main
+module github.com/JunyangShao/simdmapper-mcp
 
 go 1.24.0
 

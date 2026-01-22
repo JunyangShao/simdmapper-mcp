@@ -5,8 +5,9 @@
 package mcp_test
 
 import (
-	"main/mcp"
 	"testing"
+
+	"github.com/JunyangShao/simdmapper-mcp/mcp"
 )
 
 // TODO: add more test data.

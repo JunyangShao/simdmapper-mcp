@@ -3,7 +3,8 @@ package main
 import (
 	"context"
 	"log"
-	simdmcp "main/mcp"
+
+	simdmcp "github.com/JunyangShao/simdmapper-mcp/mcp"
 
 	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
