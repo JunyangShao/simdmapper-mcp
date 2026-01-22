@@ -2,7 +2,10 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
+	"os"
+	"strings"
 
 	simdmcp "github.com/JunyangShao/simdmapper-mcp/mcp"
 
@@ -10,6 +13,12 @@ import (
 )
 
 func main() {
+	if len(os.Args) > 1 {
+		query := strings.Join(os.Args[1:], " ")
+		fmt.Println(simdmcp.SimdMapper(query))
+		return
+	}
+
 	// Create a server with a single tool.
 	server := mcp.NewServer(&mcp.Implementation{Name: "greeter", Version: "v1.0.0"}, nil)
 	mcp.AddTool(server, &mcp.Tool{
