@@ -31,6 +31,8 @@ if archsimd.X86.AVX() {
 }
 ```
 
+*Don't forget to escape special characters when you are using CLI input.*
+
 ### MCP Server Mode (gemini-cli)
 
 To use this tool with `gemini-cli` (or other MCP clients), configure the client to run this binary. The server communicates via standard input/output (stdio).
@@ -42,7 +44,7 @@ If your `gemini-cli` uses a configuration file (typically `~/.gemini/settings.js
 ```json
   "mcpServers": {
     "simd_mapper": {
-        "command": "/absolute/to/simdmcp-bin"
+        "command": "/absolute/path/to/simdmcp-bin"
     }
   }
 ```

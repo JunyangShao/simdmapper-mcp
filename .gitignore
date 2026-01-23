@@ -1,6 +1,9 @@
 # Binaries
 main
 simdmcp
+simdmapper-mcp
 
 # Go
 go.sum
+
+ssa.html

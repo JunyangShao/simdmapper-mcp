@@ -35,6 +35,7 @@ type goAPISignature struct {
 	CPUFeature string
 	ConstImm   string
 	Doc        string
+	ResInArg0 bool
 }
 
 var regMap = map[string]byte{
@@ -156,7 +157,7 @@ func (m *mapper) emitGoCode() string {
 					"Uint", "Mask"),
 				"Int", "Mask")))
 	}
-	return fmt.Sprintf("if archsimd.X86.%s() {\n\t%s = %s.%s(%s)%s \\\\ %s\n}",
+	return fmt.Sprintf("if archsimd.X86.%s() {\n\t%s = %s.%s(%s)%s // %s\n}",
 		m.cpuFeature, m.ops[len(m.ops)-1], m.ops[0], m.name,
 		strings.Join(m.ops[1:len(m.ops)-1], ", "), mask, strings.Join(m.vectorComments, ", "))
 }
@@ -203,6 +204,13 @@ func SimdMapper(query string) string {
 				ok:         true,
 			}
 			operands := make([]simdOperand, len(asm.operands))
+			processLastArg := func(arg0idx int) {
+				if !sig.ResInArg0 {
+					mapper.parseReg(operands[len(operands)-1], sig.ArgTypes[len(sig.ArgTypes)-1])
+				} else {
+					mapper.parseReg(operands[arg0idx], sig.ArgTypes[len(sig.ArgTypes)-1])
+				}
+			}
 			copy(operands, asm.operands)
 			// Check const imm
 			if sig.ConstImm != "" {
@@ -241,157 +249,96 @@ func SimdMapper(query string) string {
 			}
 			switch sig.Shape {
 			case "op1":
-				if len(operands) != 2 {
-					continue
-				}
 				mapper.parseReg(operands[0], sig.ArgTypes[0])
-				mapper.parseReg(operands[1], sig.ArgTypes[1])
+				processLastArg(0)
 			case "op2":
-				if len(operands) != 3 {
-					continue
-				}
 				mapper.parseReg(operands[1], sig.ArgTypes[0])
 				mapper.parseReg(operands[0], sig.ArgTypes[1])
-				mapper.parseReg(operands[2], sig.ArgTypes[2])
+				processLastArg(1)
 			case "op2_21", "op2_21Type1":
-				if len(operands) != 3 {
-					continue
-				}
 				mapper.parseReg(operands[0], sig.ArgTypes[0])
 				mapper.parseReg(operands[1], sig.ArgTypes[1])
-				mapper.parseReg(operands[2], sig.ArgTypes[2])
+				processLastArg(0)
 			case "op3":
-				if len(operands) != 4 {
-					continue
-				}
 				mapper.parseReg(operands[2], sig.ArgTypes[0])
 				mapper.parseReg(operands[1], sig.ArgTypes[1])
 				mapper.parseReg(operands[0], sig.ArgTypes[2])
-				mapper.parseReg(operands[3], sig.ArgTypes[3])
-			case "op3_31Zero3":
-				if len(operands) != 4 {
-					continue
-				}
-				mapper.parseReg(operands[0], sig.ArgTypes[0])
-				mapper.parseReg(operands[1], sig.ArgTypes[1])
-				mapper.parseReg(operands[3], sig.ArgTypes[2])
+				processLastArg(2)
 			case "op3_21", "op3_21Type1":
-				if len(operands) != 4 {
-					continue
-				}
 				mapper.parseReg(operands[1], sig.ArgTypes[0])
 				mapper.parseReg(operands[2], sig.ArgTypes[1])
 				mapper.parseReg(operands[0], sig.ArgTypes[2])
-				mapper.parseReg(operands[3], sig.ArgTypes[3])
+				processLastArg(1)
 			case "op3_231Type1":
-				if len(operands) != 4 {
-					continue
-				}
 				mapper.parseReg(operands[1], sig.ArgTypes[0])
 				mapper.parseReg(operands[0], sig.ArgTypes[1])
 				mapper.parseReg(operands[2], sig.ArgTypes[2])
-				mapper.parseReg(operands[3], sig.ArgTypes[3])
+				processLastArg(1)
 			case "op2VecAsScalar":
-				if len(operands) != 3 {
-					continue
-				}
 				mapper.parseReg(operands[1], sig.ArgTypes[0])
 				mapper.parseVecRegAsScalar(operands[0], sig.ArgTypes[1])
-				mapper.parseReg(operands[2], sig.ArgTypes[2])
+				processLastArg(1)
 			case "op3VecAsScalar":
-				if len(operands) != 4 {
-					continue
-				}
 				mapper.parseReg(operands[2], sig.ArgTypes[0])
 				mapper.parseVecRegAsScalar(operands[1], sig.ArgTypes[1])
 				mapper.parseReg(operands[0], sig.ArgTypes[2])
-				mapper.parseReg(operands[3], sig.ArgTypes[3])
+				processLastArg(2)
 			case "op4":
-				if len(operands) != 5 {
-					continue
-				}
 				mapper.parseReg(operands[3], sig.ArgTypes[0])
 				mapper.parseReg(operands[2], sig.ArgTypes[1])
 				mapper.parseReg(operands[1], sig.ArgTypes[2])
 				mapper.parseReg(operands[0], sig.ArgTypes[3])
-				mapper.parseReg(operands[4], sig.ArgTypes[4])
+				processLastArg(3)
 			case "op4_231Type1":
-				if len(operands) != 5 {
-					continue
-				}
 				mapper.parseReg(operands[2], sig.ArgTypes[0])
 				mapper.parseReg(operands[1], sig.ArgTypes[1])
 				mapper.parseReg(operands[3], sig.ArgTypes[2])
 				mapper.parseReg(operands[0], sig.ArgTypes[3])
-				mapper.parseReg(operands[4], sig.ArgTypes[4])
+				processLastArg(2)
 			case "op4_31":
-				if len(operands) != 5 {
-					continue
-				}
 				mapper.parseReg(operands[1], sig.ArgTypes[0])
 				mapper.parseReg(operands[2], sig.ArgTypes[1])
 				mapper.parseReg(operands[3], sig.ArgTypes[2])
 				mapper.parseReg(operands[0], sig.ArgTypes[3])
-				mapper.parseReg(operands[4], sig.ArgTypes[4])
+				processLastArg(1)
 			case "op1Imm8":
-				if len(operands) != 3 {
-					continue
-				}
 				mapper.parseReg(operands[1], sig.ArgTypes[0])
 				mapper.parseImm(operands[0], sig.ArgTypes[1])
-				mapper.parseReg(operands[2], sig.ArgTypes[2])
+				processLastArg(1)
 			case "op2Imm8", "op2Imm8_SHA1RNDS4":
-				if len(operands) != 4 {
-					continue
-				}
 				mapper.parseReg(operands[2], sig.ArgTypes[0])
 				mapper.parseImm(operands[0], sig.ArgTypes[1])
 				mapper.parseReg(operands[1], sig.ArgTypes[2])
-				mapper.parseReg(operands[3], sig.ArgTypes[3])
+				processLastArg(2)
 			case "op2Imm8_2I":
-				if len(operands) != 4 {
-					continue
-				}
-				mapper.parseReg(operands[1], sig.ArgTypes[0])
-				mapper.parseImm(operands[0], sig.ArgTypes[1])
-				mapper.parseReg(operands[2], sig.ArgTypes[2])
-				mapper.parseReg(operands[3], sig.ArgTypes[3])
+				mapper.parseReg(operands[2], sig.ArgTypes[0])
+				mapper.parseReg(operands[1], sig.ArgTypes[1])
+				mapper.parseImm(operands[0], sig.ArgTypes[2])
+				processLastArg(2)
 			case "op2Imm8_II":
-				if len(operands) != 4 {
-					continue
-				}
 				mapper.parseReg(operands[2], sig.ArgTypes[0])
 				mapper.parseImmSplit2(operands[0], sig.ArgTypes[1], sig.ArgTypes[2])
 				mapper.parseReg(operands[1], sig.ArgTypes[3])
-				mapper.parseReg(operands[3], sig.ArgTypes[4])
+				processLastArg(2)
 			case "op3Imm8":
-				if len(operands) != 5 {
-					continue
-				}
 				mapper.parseReg(operands[3], sig.ArgTypes[0])
 				mapper.parseImm(operands[0], sig.ArgTypes[1])
 				mapper.parseReg(operands[2], sig.ArgTypes[2])
 				mapper.parseReg(operands[1], sig.ArgTypes[3])
-				mapper.parseReg(operands[4], sig.ArgTypes[4])
+				processLastArg(3)
 			case "op3Imm8_2I":
-				if len(operands) != 5 {
-					continue
-				}
 				mapper.parseReg(operands[3], sig.ArgTypes[0])
 				mapper.parseReg(operands[2], sig.ArgTypes[1])
 				mapper.parseImm(operands[0], sig.ArgTypes[2])
 				mapper.parseReg(operands[1], sig.ArgTypes[3])
-				mapper.parseReg(operands[4], sig.ArgTypes[4])
+				processLastArg(3)
 			case "op4Imm8":
-				if len(operands) != 6 {
-					continue
-				}
 				mapper.parseReg(operands[4], sig.ArgTypes[0])
 				mapper.parseImm(operands[0], sig.ArgTypes[1])
 				mapper.parseReg(operands[3], sig.ArgTypes[2])
 				mapper.parseReg(operands[2], sig.ArgTypes[3])
 				mapper.parseReg(operands[1], sig.ArgTypes[4])
-				mapper.parseReg(operands[5], sig.ArgTypes[5])
+				processLastArg(4)
 			default:
 				continue
 			}

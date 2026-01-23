@@ -11,6 +11,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"SHA1MSG2": {
@@ -20,6 +21,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"SHA1NEXTE": {
@@ -29,6 +31,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"SHA1RNDS4": {
@@ -38,6 +41,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op2Imm8_SHA1RNDS4",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"SHA256MSG1": {
@@ -47,6 +51,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"SHA256MSG2": {
@@ -56,6 +61,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"SHA256RNDS2": {
@@ -65,6 +71,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "SHA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VADDPD": {
@@ -74,6 +81,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -81,6 +89,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -88,6 +97,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VADDPS": {
@@ -97,6 +107,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -104,6 +115,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -111,6 +123,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VADDSUBPD": {
@@ -120,6 +133,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSub",
@@ -127,6 +141,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VADDSUBPS": {
@@ -136,6 +151,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSub",
@@ -143,15 +159,17 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VAESDEC": {
 		{
 			Name:       "AESDecryptOneRound",
 			ArgTypes:   []string{"Uint8x16", "Uint32x4", "Uint8x16"},
-			CPUFeature: "AVX, AES",
+			CPUFeature: "AVXAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESDecryptOneRound",
@@ -159,6 +177,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESDecryptOneRound",
@@ -166,15 +185,17 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VAESDECLAST": {
 		{
 			Name:       "AESDecryptLastRound",
 			ArgTypes:   []string{"Uint8x16", "Uint32x4", "Uint8x16"},
-			CPUFeature: "AVX, AES",
+			CPUFeature: "AVXAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESDecryptLastRound",
@@ -182,6 +203,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESDecryptLastRound",
@@ -189,15 +211,17 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VAESENC": {
 		{
 			Name:       "AESEncryptOneRound",
 			ArgTypes:   []string{"Uint8x16", "Uint32x4", "Uint8x16"},
-			CPUFeature: "AVX, AES",
+			CPUFeature: "AVXAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESEncryptOneRound",
@@ -205,6 +229,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESEncryptOneRound",
@@ -212,15 +237,17 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VAESENCLAST": {
 		{
 			Name:       "AESEncryptLastRound",
 			ArgTypes:   []string{"Uint8x16", "Uint32x4", "Uint8x16"},
-			CPUFeature: "AVX, AES",
+			CPUFeature: "AVXAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESEncryptLastRound",
@@ -228,6 +255,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AESEncryptLastRound",
@@ -235,24 +263,27 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VAES",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VAESIMC": {
 		{
 			Name:       "AESInvMixColumns",
 			ArgTypes:   []string{"Uint32x4", "Uint32x4"},
-			CPUFeature: "AVX, AES",
+			CPUFeature: "AVXAES",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VAESKEYGENASSIST": {
 		{
 			Name:       "AESRoundKeyGenAssist",
 			ArgTypes:   []string{"Uint32x4", "uint8", "Uint32x4"},
-			CPUFeature: "AVX, AES",
+			CPUFeature: "AVXAES",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VBROADCASTSD": {
@@ -262,6 +293,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -269,6 +301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VBROADCASTSS": {
@@ -278,6 +311,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -285,6 +319,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To16",
@@ -292,6 +327,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCMPPD": {
@@ -301,6 +337,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -308,6 +345,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -315,6 +353,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -322,6 +361,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -329,6 +369,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -336,6 +377,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -343,6 +385,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -350,6 +393,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -357,6 +401,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -364,6 +409,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -371,6 +417,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -378,6 +425,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -385,6 +433,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -392,6 +441,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -399,6 +449,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -406,6 +457,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -413,6 +465,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -420,6 +473,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VCMPPS": {
@@ -429,6 +483,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -436,6 +491,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -443,6 +499,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -450,6 +507,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -457,6 +515,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -464,6 +523,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -471,6 +531,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -478,6 +539,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -485,6 +547,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -492,6 +555,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -499,6 +563,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -506,6 +571,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -513,6 +579,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -520,6 +587,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -527,6 +595,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -534,6 +603,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -541,6 +611,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -548,6 +619,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VCOMPRESSPD": {
@@ -557,6 +629,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -564,6 +637,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -571,6 +645,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCOMPRESSPS": {
@@ -580,6 +655,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -587,6 +663,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -594,6 +671,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTDQ2PD": {
@@ -603,6 +681,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -610,6 +689,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTDQ2PS": {
@@ -619,6 +699,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat32",
@@ -626,6 +707,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat32",
@@ -633,6 +715,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTPD2PS": {
@@ -642,6 +725,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTPD2PSX": {
@@ -651,6 +735,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTPD2PSY": {
@@ -660,6 +745,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTPS2PD": {
@@ -669,6 +755,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -676,6 +763,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTQQ2PD": {
@@ -685,6 +773,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -692,6 +781,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -699,6 +789,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTQQ2PS": {
@@ -708,6 +799,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTQQ2PSX": {
@@ -717,6 +809,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTQQ2PSY": {
@@ -726,6 +819,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2DQ": {
@@ -735,6 +829,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2DQX": {
@@ -744,6 +839,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2DQY": {
@@ -753,6 +849,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2QQ": {
@@ -762,6 +859,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToInt64",
@@ -769,6 +867,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToInt64",
@@ -776,6 +875,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2UDQ": {
@@ -785,6 +885,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2UDQX": {
@@ -794,6 +895,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2UDQY": {
@@ -803,6 +905,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPD2UQQ": {
@@ -812,6 +915,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToUint64",
@@ -819,6 +923,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToUint64",
@@ -826,6 +931,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPS2DQ": {
@@ -835,6 +941,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToInt32",
@@ -842,6 +949,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToInt32",
@@ -849,6 +957,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPS2QQ": {
@@ -858,6 +967,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToInt64",
@@ -865,6 +975,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPS2UDQ": {
@@ -874,6 +985,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToUint32",
@@ -881,6 +993,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToUint32",
@@ -888,6 +1001,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTTPS2UQQ": {
@@ -897,6 +1011,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToUint64",
@@ -904,6 +1019,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTUDQ2PD": {
@@ -913,6 +1029,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -920,6 +1037,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTUDQ2PS": {
@@ -929,6 +1047,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat32",
@@ -936,6 +1055,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat32",
@@ -943,6 +1063,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTUQQ2PD": {
@@ -952,6 +1073,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -959,6 +1081,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConvertToFloat64",
@@ -966,6 +1089,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTUQQ2PS": {
@@ -975,6 +1099,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTUQQ2PSX": {
@@ -984,6 +1109,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VCVTUQQ2PSY": {
@@ -993,6 +1119,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VDIVPD": {
@@ -1002,6 +1129,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Div",
@@ -1009,6 +1137,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Div",
@@ -1016,6 +1145,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VDIVPS": {
@@ -1025,6 +1155,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Div",
@@ -1032,6 +1163,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Div",
@@ -1039,6 +1171,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VEXPANDPD": {
@@ -1048,6 +1181,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -1055,6 +1189,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -1062,6 +1197,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VEXPANDPS": {
@@ -1071,6 +1207,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -1078,6 +1215,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -1085,6 +1223,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VEXTRACTF128": {
@@ -1094,6 +1233,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1101,6 +1241,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1108,6 +1249,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1115,6 +1257,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VEXTRACTF64X4": {
@@ -1124,6 +1267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1131,6 +1275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1138,6 +1283,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1145,6 +1291,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VEXTRACTI128": {
@@ -1154,6 +1301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1161,6 +1309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1168,6 +1317,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1175,6 +1325,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1182,6 +1333,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1189,6 +1341,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1196,6 +1349,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1203,6 +1357,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1210,6 +1365,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1217,6 +1373,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1224,6 +1381,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1231,6 +1389,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1238,6 +1397,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1245,6 +1405,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1252,6 +1413,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1259,6 +1421,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VEXTRACTI64X4": {
@@ -1268,6 +1431,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1275,6 +1439,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1282,6 +1447,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1289,6 +1455,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1296,6 +1463,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1303,6 +1471,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1310,6 +1479,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetHi",
@@ -1317,6 +1487,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1324,6 +1495,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1331,6 +1503,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1338,6 +1511,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1345,6 +1519,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1352,6 +1527,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1359,6 +1535,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1366,6 +1543,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetLo",
@@ -1373,22 +1551,25 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VFMADD213PD": {
 		{
 			Name:       "MulAdd",
 			ArgTypes:   []string{"Float64x2", "Float64x2", "Float64x2", "Float64x2"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAdd",
 			ArgTypes:   []string{"Float64x4", "Float64x4", "Float64x4", "Float64x4"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAdd",
@@ -1396,22 +1577,25 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VFMADD213PS": {
 		{
 			Name:       "MulAdd",
 			ArgTypes:   []string{"Float32x4", "Float32x4", "Float32x4", "Float32x4"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAdd",
 			ArgTypes:   []string{"Float32x8", "Float32x8", "Float32x8", "Float32x8"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAdd",
@@ -1419,22 +1603,25 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VFMADDSUB213PD": {
 		{
 			Name:       "MulAddSub",
 			ArgTypes:   []string{"Float64x2", "Float64x2", "Float64x2", "Float64x2"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAddSub",
 			ArgTypes:   []string{"Float64x4", "Float64x4", "Float64x4", "Float64x4"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAddSub",
@@ -1442,22 +1629,25 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VFMADDSUB213PS": {
 		{
 			Name:       "MulAddSub",
 			ArgTypes:   []string{"Float32x4", "Float32x4", "Float32x4", "Float32x4"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAddSub",
 			ArgTypes:   []string{"Float32x8", "Float32x8", "Float32x8", "Float32x8"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulAddSub",
@@ -1465,22 +1655,25 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VFMSUBADD213PD": {
 		{
 			Name:       "MulSubAdd",
 			ArgTypes:   []string{"Float64x2", "Float64x2", "Float64x2", "Float64x2"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulSubAdd",
 			ArgTypes:   []string{"Float64x4", "Float64x4", "Float64x4", "Float64x4"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulSubAdd",
@@ -1488,22 +1681,25 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VFMSUBADD213PS": {
 		{
 			Name:       "MulSubAdd",
 			ArgTypes:   []string{"Float32x4", "Float32x4", "Float32x4", "Float32x4"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulSubAdd",
 			ArgTypes:   []string{"Float32x8", "Float32x8", "Float32x8", "Float32x8"},
-			CPUFeature: "AVX512",
+			CPUFeature: "FMA",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "MulSubAdd",
@@ -1511,6 +1707,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VGF2P8AFFINEINVQB": {
@@ -1520,6 +1717,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2Imm8_2I",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GaloisFieldAffineTransformInverse",
@@ -1527,6 +1725,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2Imm8_2I",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GaloisFieldAffineTransformInverse",
@@ -1534,6 +1733,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2Imm8_2I",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VGF2P8AFFINEQB": {
@@ -1543,6 +1743,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2Imm8_2I",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GaloisFieldAffineTransform",
@@ -1550,6 +1751,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2Imm8_2I",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GaloisFieldAffineTransform",
@@ -1557,6 +1759,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2Imm8_2I",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VGF2P8MULB": {
@@ -1566,6 +1769,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GaloisFieldMul",
@@ -1573,6 +1777,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GaloisFieldMul",
@@ -1580,6 +1785,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512GFNI",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VHADDPD": {
@@ -1589,6 +1795,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsGrouped",
@@ -1596,6 +1803,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VHADDPS": {
@@ -1605,6 +1813,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsGrouped",
@@ -1612,6 +1821,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VHSUBPD": {
@@ -1621,6 +1831,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsGrouped",
@@ -1628,6 +1839,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VHSUBPS": {
@@ -1637,6 +1849,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsGrouped",
@@ -1644,6 +1857,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VINSERTF128": {
@@ -1653,6 +1867,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1660,6 +1875,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1667,6 +1883,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1674,6 +1891,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VINSERTF64X4": {
@@ -1683,6 +1901,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1690,6 +1909,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1697,6 +1917,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1704,6 +1925,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VINSERTI128": {
@@ -1713,6 +1935,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1720,6 +1943,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1727,6 +1951,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1734,6 +1959,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1741,6 +1967,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1748,6 +1975,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1755,6 +1983,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1762,6 +1991,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1769,6 +1999,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1776,6 +2007,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1783,6 +2015,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1790,6 +2023,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1797,6 +2031,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1804,6 +2039,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1811,6 +2047,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1818,6 +2055,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VINSERTI64X4": {
@@ -1827,6 +2065,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1834,6 +2073,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1841,6 +2081,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1848,6 +2089,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1855,6 +2097,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1862,6 +2105,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1869,6 +2113,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetHi",
@@ -1876,6 +2121,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1883,6 +2129,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1890,6 +2137,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1897,6 +2145,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1904,6 +2153,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1911,6 +2161,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1918,6 +2169,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1925,6 +2177,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetLo",
@@ -1932,6 +2185,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 	},
 	"VMAXPD": {
@@ -1941,6 +2195,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -1948,6 +2203,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -1955,6 +2211,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VMAXPS": {
@@ -1964,6 +2221,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -1971,6 +2229,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -1978,6 +2237,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VMINPD": {
@@ -1987,6 +2247,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -1994,6 +2255,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -2001,6 +2263,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VMINPS": {
@@ -2010,6 +2273,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -2017,6 +2281,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -2024,6 +2289,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VMULPD": {
@@ -2033,6 +2299,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -2040,6 +2307,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -2047,6 +2315,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VMULPS": {
@@ -2056,6 +2325,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -2063,6 +2333,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -2070,6 +2341,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPABSB": {
@@ -2079,6 +2351,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2086,6 +2359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2093,6 +2367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPABSD": {
@@ -2102,6 +2377,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2109,6 +2385,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2116,6 +2393,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPABSQ": {
@@ -2125,6 +2403,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2132,6 +2411,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2139,6 +2419,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPABSW": {
@@ -2148,6 +2429,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2155,6 +2437,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Abs",
@@ -2162,6 +2445,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPACKSSDW": {
@@ -2171,6 +2455,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt16ConcatGrouped",
@@ -2178,6 +2463,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt16ConcatGrouped",
@@ -2185,6 +2471,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPACKUSDW": {
@@ -2194,6 +2481,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint16ConcatGrouped",
@@ -2201,6 +2489,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint16ConcatGrouped",
@@ -2208,6 +2497,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDB": {
@@ -2217,6 +2507,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2224,6 +2515,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2231,6 +2523,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2238,6 +2531,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2245,6 +2539,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2252,6 +2547,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDD": {
@@ -2261,6 +2557,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2268,6 +2565,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2275,6 +2573,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2282,6 +2581,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2289,6 +2589,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2296,6 +2597,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDQ": {
@@ -2305,6 +2607,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2312,6 +2615,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2319,6 +2623,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2326,6 +2631,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2333,6 +2639,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2340,6 +2647,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDSB": {
@@ -2349,6 +2657,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2356,6 +2665,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2363,6 +2673,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDSW": {
@@ -2372,6 +2683,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2379,6 +2691,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2386,6 +2699,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDUSB": {
@@ -2395,6 +2709,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2402,6 +2717,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2409,6 +2725,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDUSW": {
@@ -2418,6 +2735,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2425,6 +2743,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddSaturated",
@@ -2432,6 +2751,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPADDW": {
@@ -2441,6 +2761,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2448,6 +2769,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2455,6 +2777,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2462,6 +2785,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2469,6 +2793,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Add",
@@ -2476,6 +2801,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPALIGNR": {
@@ -2485,6 +2811,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConcatShiftBytesRightGrouped",
@@ -2492,6 +2819,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ConcatShiftBytesRightGrouped",
@@ -2499,6 +2827,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPAND": {
@@ -2508,6 +2837,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2515,6 +2845,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2522,6 +2853,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2529,6 +2861,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2536,6 +2869,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2543,6 +2877,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2550,6 +2885,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2557,6 +2893,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2564,6 +2901,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2571,6 +2909,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2578,6 +2917,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2585,6 +2925,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2592,6 +2933,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2599,6 +2941,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2606,6 +2949,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2613,6 +2957,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPANDD": {
@@ -2622,6 +2967,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2629,6 +2975,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2636,6 +2983,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2643,6 +2991,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2650,6 +2999,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2657,6 +3007,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPANDN": {
@@ -2666,6 +3017,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2673,6 +3025,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2680,6 +3033,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2687,6 +3041,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2694,6 +3049,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2701,6 +3057,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2708,6 +3065,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2715,6 +3073,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2722,6 +3081,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2729,6 +3089,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2736,6 +3097,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2743,6 +3105,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2750,6 +3113,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2757,6 +3121,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2764,6 +3129,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2771,6 +3137,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPANDND": {
@@ -2780,6 +3147,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2787,6 +3155,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2794,6 +3163,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2801,6 +3171,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2808,6 +3179,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2815,6 +3187,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPANDNQ": {
@@ -2824,6 +3197,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AndNot",
@@ -2831,6 +3205,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPANDQ": {
@@ -2840,6 +3215,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "And",
@@ -2847,6 +3223,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPAVGB": {
@@ -2856,6 +3233,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Average",
@@ -2863,6 +3241,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Average",
@@ -2870,6 +3249,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPAVGW": {
@@ -2879,6 +3259,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Average",
@@ -2886,6 +3267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Average",
@@ -2893,6 +3275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPBROADCASTB": {
@@ -2902,6 +3285,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To16",
@@ -2909,6 +3293,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To32",
@@ -2916,6 +3301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To32",
@@ -2923,6 +3309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To64",
@@ -2930,6 +3317,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To64",
@@ -2937,6 +3325,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPBROADCASTD": {
@@ -2946,6 +3335,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To4",
@@ -2953,6 +3343,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -2960,6 +3351,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -2967,6 +3359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To16",
@@ -2974,6 +3367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To16",
@@ -2981,6 +3375,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPBROADCASTQ": {
@@ -2990,6 +3385,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To2",
@@ -2997,6 +3393,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To2",
@@ -3004,6 +3401,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To4",
@@ -3011,6 +3409,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To4",
@@ -3018,6 +3417,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -3025,6 +3425,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -3032,6 +3433,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPBROADCASTW": {
@@ -3041,6 +3443,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To8",
@@ -3048,6 +3451,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To16",
@@ -3055,6 +3459,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To16",
@@ -3062,6 +3467,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To32",
@@ -3069,6 +3475,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Broadcast1To32",
@@ -3076,6 +3483,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPB": {
@@ -3085,6 +3493,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3092,6 +3501,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3099,6 +3509,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3106,6 +3517,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPD": {
@@ -3115,6 +3527,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3122,6 +3535,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3129,6 +3543,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3136,6 +3551,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPEQB": {
@@ -3145,6 +3561,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3152,6 +3569,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3159,6 +3577,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3166,6 +3585,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3173,6 +3593,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3180,6 +3601,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPEQD": {
@@ -3189,6 +3611,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3196,6 +3619,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3203,6 +3627,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3210,6 +3635,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3217,6 +3643,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3224,6 +3651,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPEQQ": {
@@ -3233,6 +3661,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3240,6 +3669,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3247,6 +3677,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3254,6 +3685,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3261,6 +3693,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3268,6 +3701,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPEQW": {
@@ -3277,6 +3711,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3284,6 +3719,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3291,6 +3727,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3298,6 +3735,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3305,6 +3743,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Equal",
@@ -3312,6 +3751,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPGTB": {
@@ -3321,6 +3761,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3328,6 +3769,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3335,6 +3777,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPGTD": {
@@ -3344,6 +3787,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3351,6 +3795,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3358,6 +3803,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPGTQ": {
@@ -3367,6 +3813,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3374,6 +3821,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3381,6 +3829,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPGTW": {
@@ -3390,6 +3839,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3397,6 +3847,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Greater",
@@ -3404,6 +3855,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPQ": {
@@ -3413,6 +3865,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3420,6 +3873,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3427,6 +3881,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3434,6 +3889,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPUB": {
@@ -3443,6 +3899,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -3450,6 +3907,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3457,6 +3915,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3464,6 +3923,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3471,6 +3931,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPUD": {
@@ -3480,6 +3941,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -3487,6 +3949,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3494,6 +3957,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3501,6 +3965,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3508,6 +3973,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPUQ": {
@@ -3517,6 +3983,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -3524,6 +3991,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3531,6 +3999,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3538,6 +4007,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3545,6 +4015,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPUW": {
@@ -3554,6 +4025,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "14",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GreaterEqual",
@@ -3561,6 +4033,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3568,6 +4041,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3575,6 +4049,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3582,6 +4057,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCMPW": {
@@ -3591,6 +4067,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "13",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Less",
@@ -3598,6 +4075,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LessEqual",
@@ -3605,6 +4083,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "NotEqual",
@@ -3612,6 +4091,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "4",
+			ResInArg0:  false,
 		},
 	},
 	"VPCOMPRESSB": {
@@ -3621,6 +4101,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3628,6 +4109,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3635,6 +4117,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3642,6 +4125,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3649,6 +4133,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3656,6 +4141,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCOMPRESSD": {
@@ -3665,6 +4151,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3672,6 +4159,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3679,6 +4167,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3686,6 +4175,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3693,6 +4183,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3700,6 +4191,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCOMPRESSQ": {
@@ -3709,6 +4201,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3716,6 +4209,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3723,6 +4217,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3730,6 +4225,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3737,6 +4233,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3744,6 +4241,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPCOMPRESSW": {
@@ -3753,6 +4251,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3760,6 +4259,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3767,6 +4267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3774,6 +4275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3781,6 +4283,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Compress",
@@ -3788,6 +4291,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERM2F128": {
@@ -3797,6 +4301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3804,6 +4309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERM2I128": {
@@ -3813,6 +4319,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3820,6 +4327,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3827,6 +4335,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3834,6 +4343,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3841,6 +4351,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3848,6 +4359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3855,6 +4367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Select128FromPair",
@@ -3862,6 +4375,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2Imm8_II",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERMB": {
@@ -3871,6 +4385,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3878,6 +4393,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3885,6 +4401,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3892,6 +4409,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3899,6 +4417,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3906,6 +4425,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERMD": {
@@ -3915,6 +4435,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3922,6 +4443,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3929,6 +4451,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -3936,6 +4459,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERMI2B": {
@@ -3945,6 +4469,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -3952,6 +4477,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -3959,6 +4485,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -3966,6 +4493,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -3973,6 +4501,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -3980,6 +4509,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPERMI2D": {
@@ -3989,6 +4519,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -3996,6 +4527,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4003,6 +4535,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4010,6 +4543,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4017,6 +4551,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4024,6 +4559,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPERMI2PD": {
@@ -4033,6 +4569,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4040,6 +4577,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4047,6 +4585,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPERMI2PS": {
@@ -4056,6 +4595,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4063,6 +4603,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4070,6 +4611,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPERMI2Q": {
@@ -4079,6 +4621,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4086,6 +4629,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4093,6 +4637,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4100,6 +4645,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4107,6 +4653,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4114,6 +4661,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPERMI2W": {
@@ -4123,6 +4671,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4130,6 +4679,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4137,6 +4687,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4144,6 +4695,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4151,6 +4703,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ConcatPermute",
@@ -4158,6 +4711,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op3_231Type1",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPERMPD": {
@@ -4167,6 +4721,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4174,6 +4729,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERMPS": {
@@ -4183,6 +4739,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4190,6 +4747,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERMQ": {
@@ -4199,6 +4757,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4206,6 +4765,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4213,6 +4773,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4220,6 +4781,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPERMW": {
@@ -4229,6 +4791,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4236,6 +4799,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4243,6 +4807,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4250,6 +4815,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4257,6 +4823,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Permute",
@@ -4264,6 +4831,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2_21Type1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXPANDB": {
@@ -4273,6 +4841,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4280,6 +4849,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4287,6 +4857,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4294,6 +4865,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4301,6 +4873,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4308,6 +4881,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXPANDD": {
@@ -4317,6 +4891,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4324,6 +4899,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4331,6 +4907,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4338,6 +4915,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4345,6 +4923,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4352,6 +4931,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXPANDQ": {
@@ -4361,6 +4941,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4368,6 +4949,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4375,6 +4957,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4382,6 +4965,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4389,6 +4973,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4396,6 +4981,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXPANDW": {
@@ -4405,6 +4991,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4412,6 +4999,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4419,6 +5007,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4426,6 +5015,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4433,6 +5023,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Expand",
@@ -4440,6 +5031,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXTRB": {
@@ -4449,6 +5041,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetElem",
@@ -4456,6 +5049,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXTRD": {
@@ -4465,6 +5059,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetElem",
@@ -4472,6 +5067,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetElem",
@@ -4479,6 +5075,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXTRQ": {
@@ -4488,6 +5085,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetElem",
@@ -4495,6 +5093,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetElem",
@@ -4502,6 +5101,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPEXTRW": {
@@ -4511,6 +5111,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "GetElem",
@@ -4518,6 +5119,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPHADDD": {
@@ -4527,6 +5129,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairs",
@@ -4534,6 +5137,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsGrouped",
@@ -4541,6 +5145,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsGrouped",
@@ -4548,6 +5153,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPHADDSW": {
@@ -4557,6 +5163,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsSaturatedGrouped",
@@ -4564,6 +5171,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPHADDW": {
@@ -4573,6 +5181,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairs",
@@ -4580,6 +5189,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsGrouped",
@@ -4587,6 +5197,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "AddPairsGrouped",
@@ -4594,6 +5205,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPHSUBD": {
@@ -4603,6 +5215,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairs",
@@ -4610,6 +5223,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsGrouped",
@@ -4617,6 +5231,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsGrouped",
@@ -4624,6 +5239,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPHSUBSW": {
@@ -4633,6 +5249,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsSaturatedGrouped",
@@ -4640,6 +5257,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPHSUBW": {
@@ -4649,6 +5267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairs",
@@ -4656,6 +5275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsGrouped",
@@ -4663,6 +5283,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubPairsGrouped",
@@ -4670,6 +5291,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPINSRB": {
@@ -4679,6 +5301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetElem",
@@ -4686,6 +5309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPINSRD": {
@@ -4695,6 +5319,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetElem",
@@ -4702,6 +5327,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetElem",
@@ -4709,6 +5335,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPINSRQ": {
@@ -4718,6 +5345,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetElem",
@@ -4725,6 +5353,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetElem",
@@ -4732,6 +5361,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPINSRW": {
@@ -4741,6 +5371,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SetElem",
@@ -4748,6 +5379,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPLZCNTD": {
@@ -4757,6 +5389,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4764,6 +5397,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4771,6 +5405,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4778,6 +5413,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4785,6 +5421,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4792,6 +5429,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPLZCNTQ": {
@@ -4801,6 +5439,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4808,6 +5447,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4815,6 +5455,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4822,6 +5463,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4829,6 +5471,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "LeadingZeros",
@@ -4836,6 +5479,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMADDUBSW": {
@@ -4845,6 +5489,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "DotProductPairsSaturated",
@@ -4852,6 +5497,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "DotProductPairsSaturated",
@@ -4859,6 +5505,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMADDWD": {
@@ -4868,6 +5515,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "DotProductPairs",
@@ -4875,6 +5523,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "DotProductPairs",
@@ -4882,6 +5531,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXSB": {
@@ -4891,6 +5541,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4898,6 +5549,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4905,6 +5557,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXSD": {
@@ -4914,6 +5567,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4921,6 +5575,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4928,6 +5583,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXSQ": {
@@ -4937,6 +5593,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4944,6 +5601,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4951,6 +5609,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXSW": {
@@ -4960,6 +5619,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4967,6 +5627,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4974,6 +5635,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXUB": {
@@ -4983,6 +5645,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4990,6 +5653,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -4997,6 +5661,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXUD": {
@@ -5006,6 +5671,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -5013,6 +5679,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -5020,6 +5687,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXUQ": {
@@ -5029,6 +5697,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -5036,6 +5705,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -5043,6 +5713,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMAXUW": {
@@ -5052,6 +5723,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -5059,6 +5731,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Max",
@@ -5066,6 +5739,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINSB": {
@@ -5075,6 +5749,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5082,6 +5757,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5089,6 +5765,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINSD": {
@@ -5098,6 +5775,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5105,6 +5783,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5112,6 +5791,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINSQ": {
@@ -5121,6 +5801,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5128,6 +5809,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5135,6 +5817,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINSW": {
@@ -5144,6 +5827,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5151,6 +5835,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5158,6 +5843,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINUB": {
@@ -5167,6 +5853,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5174,6 +5861,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5181,6 +5869,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINUD": {
@@ -5190,6 +5879,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5197,6 +5887,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5204,6 +5895,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINUQ": {
@@ -5213,6 +5905,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5220,6 +5913,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5227,6 +5921,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMINUW": {
@@ -5236,6 +5931,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5243,6 +5939,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Min",
@@ -5250,6 +5947,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVDB": {
@@ -5259,6 +5957,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt8",
@@ -5266,6 +5965,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt8",
@@ -5273,6 +5973,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5280,6 +5981,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5287,6 +5989,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5294,6 +5997,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVDW": {
@@ -5303,6 +6007,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt16",
@@ -5310,6 +6015,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt16",
@@ -5317,6 +6023,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint16",
@@ -5324,6 +6031,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint16",
@@ -5331,6 +6039,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint16",
@@ -5338,6 +6047,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVQB": {
@@ -5347,6 +6057,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt8",
@@ -5354,6 +6065,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt8",
@@ -5361,6 +6073,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5368,6 +6081,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5375,6 +6089,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5382,6 +6097,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVQD": {
@@ -5391,6 +6107,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt32",
@@ -5398,6 +6115,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt32",
@@ -5405,6 +6123,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint32",
@@ -5412,6 +6131,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint32",
@@ -5419,6 +6139,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint32",
@@ -5426,6 +6147,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVQW": {
@@ -5435,6 +6157,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt16",
@@ -5442,6 +6165,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt16",
@@ -5449,6 +6173,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint16",
@@ -5456,6 +6181,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint16",
@@ -5463,6 +6189,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint16",
@@ -5470,6 +6197,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSDB": {
@@ -5479,6 +6207,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt8",
@@ -5486,6 +6215,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt8",
@@ -5493,6 +6223,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSDW": {
@@ -5502,6 +6233,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt16",
@@ -5509,6 +6241,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt16",
@@ -5516,6 +6249,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSQB": {
@@ -5525,6 +6259,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt8",
@@ -5532,6 +6267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt8",
@@ -5539,6 +6275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSQD": {
@@ -5548,6 +6285,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt32",
@@ -5555,6 +6293,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt32",
@@ -5562,6 +6301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSQW": {
@@ -5571,6 +6311,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt16",
@@ -5578,6 +6319,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt16",
@@ -5585,6 +6327,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSWB": {
@@ -5594,6 +6337,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt8",
@@ -5601,6 +6345,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToInt8",
@@ -5608,6 +6353,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSXBD": {
@@ -5617,6 +6363,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo8ToInt32",
@@ -5624,6 +6371,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt32",
@@ -5631,6 +6379,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSXBQ": {
@@ -5640,6 +6389,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo4ToInt64",
@@ -5647,6 +6397,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo8ToInt64",
@@ -5654,6 +6405,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSXBW": {
@@ -5663,6 +6415,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt16",
@@ -5670,6 +6423,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt16",
@@ -5677,6 +6431,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSXDQ": {
@@ -5686,6 +6441,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt64",
@@ -5693,6 +6449,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt64",
@@ -5700,6 +6457,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSXWD": {
@@ -5709,6 +6467,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt32",
@@ -5716,6 +6475,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt32",
@@ -5723,6 +6483,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVSXWQ": {
@@ -5732,6 +6493,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo4ToInt64",
@@ -5739,6 +6501,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToInt64",
@@ -5746,6 +6509,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVUSDB": {
@@ -5755,6 +6519,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint8",
@@ -5762,6 +6527,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint8",
@@ -5769,6 +6535,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVUSDW": {
@@ -5778,6 +6545,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint16",
@@ -5785,6 +6553,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint16",
@@ -5792,6 +6561,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVUSQB": {
@@ -5801,6 +6571,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint8",
@@ -5808,6 +6579,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint8",
@@ -5815,6 +6587,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVUSQD": {
@@ -5824,6 +6597,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint32",
@@ -5831,6 +6605,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint32",
@@ -5838,6 +6613,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVUSQW": {
@@ -5847,6 +6623,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint16",
@@ -5854,6 +6631,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint16",
@@ -5861,6 +6639,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVUSWB": {
@@ -5870,6 +6649,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint8",
@@ -5877,6 +6657,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SaturateToUint8",
@@ -5884,6 +6665,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVWB": {
@@ -5893,6 +6675,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt8",
@@ -5900,6 +6683,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToInt8",
@@ -5907,6 +6691,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5914,6 +6699,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5921,6 +6707,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncateToUint8",
@@ -5928,6 +6715,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVZXBD": {
@@ -5937,6 +6725,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo8ToUint32",
@@ -5944,6 +6733,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint32",
@@ -5951,6 +6741,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVZXBQ": {
@@ -5960,6 +6751,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo4ToUint64",
@@ -5967,6 +6759,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo8ToUint64",
@@ -5974,6 +6767,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVZXBW": {
@@ -5983,6 +6777,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint16",
@@ -5990,6 +6785,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint16",
@@ -5997,6 +6793,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVZXDQ": {
@@ -6006,6 +6803,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint64",
@@ -6013,6 +6811,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint64",
@@ -6020,6 +6819,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVZXWD": {
@@ -6029,6 +6829,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint32",
@@ -6036,6 +6837,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint32",
@@ -6043,6 +6845,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMOVZXWQ": {
@@ -6052,6 +6855,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendLo4ToUint64",
@@ -6059,6 +6863,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ExtendToUint64",
@@ -6066,6 +6871,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULDQ": {
@@ -6075,6 +6881,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "MulEvenWiden",
@@ -6082,6 +6889,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULHUW": {
@@ -6091,6 +6899,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "MulHigh",
@@ -6098,6 +6907,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "MulHigh",
@@ -6105,6 +6915,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULHW": {
@@ -6114,6 +6925,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "MulHigh",
@@ -6121,6 +6933,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "MulHigh",
@@ -6128,6 +6941,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULLD": {
@@ -6137,6 +6951,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6144,6 +6959,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6151,6 +6967,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6158,6 +6975,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6165,6 +6983,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6172,6 +6991,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULLQ": {
@@ -6181,6 +7001,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6188,6 +7009,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6195,6 +7017,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6202,6 +7025,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6209,6 +7033,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6216,6 +7041,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULLW": {
@@ -6225,6 +7051,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6232,6 +7059,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6239,6 +7067,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6246,6 +7075,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6253,6 +7083,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Mul",
@@ -6260,6 +7091,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPMULUDQ": {
@@ -6269,6 +7101,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "MulEvenWiden",
@@ -6276,6 +7109,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPOPCNTB": {
@@ -6285,6 +7119,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6292,6 +7127,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6299,6 +7135,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6306,6 +7143,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6313,6 +7151,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6320,6 +7159,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPOPCNTD": {
@@ -6329,6 +7169,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6336,6 +7177,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6343,6 +7185,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6350,6 +7193,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6357,6 +7201,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6364,6 +7209,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPOPCNTQ": {
@@ -6373,6 +7219,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6380,6 +7227,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6387,6 +7235,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6394,6 +7243,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6401,6 +7251,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6408,6 +7259,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VPOPCNTDQ",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPOPCNTW": {
@@ -6417,6 +7269,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6424,6 +7277,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6431,6 +7285,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6438,6 +7293,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6445,6 +7301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "OnesCount",
@@ -6452,6 +7309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512BITALG",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPOR": {
@@ -6461,6 +7319,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6468,6 +7327,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6475,6 +7335,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6482,6 +7343,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6489,6 +7351,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6496,6 +7359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6503,6 +7367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6510,6 +7375,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6517,6 +7383,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6524,6 +7391,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6531,6 +7399,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6538,6 +7407,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6545,6 +7415,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6552,6 +7423,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6559,6 +7431,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6566,6 +7439,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPORD": {
@@ -6575,6 +7449,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6582,6 +7457,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6589,6 +7465,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6596,6 +7473,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6603,6 +7481,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6610,6 +7489,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPORQ": {
@@ -6619,6 +7499,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Or",
@@ -6626,6 +7507,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPROLD": {
@@ -6635,6 +7517,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6642,6 +7525,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6649,6 +7533,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6656,6 +7541,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6663,6 +7549,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6670,6 +7557,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPROLQ": {
@@ -6679,6 +7567,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6686,6 +7575,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6693,6 +7583,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6700,6 +7591,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6707,6 +7599,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllLeft",
@@ -6714,6 +7607,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPROLVD": {
@@ -6723,6 +7617,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6730,6 +7625,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6737,6 +7633,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6744,6 +7641,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6751,6 +7649,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6758,6 +7657,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPROLVQ": {
@@ -6767,6 +7667,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6774,6 +7675,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6781,6 +7683,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6788,6 +7691,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6795,6 +7699,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateLeft",
@@ -6802,6 +7707,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPRORD": {
@@ -6811,6 +7717,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6818,6 +7725,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6825,6 +7733,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6832,6 +7741,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6839,6 +7749,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6846,6 +7757,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPRORQ": {
@@ -6855,6 +7767,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6862,6 +7775,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6869,6 +7783,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6876,6 +7791,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6883,6 +7799,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateAllRight",
@@ -6890,6 +7807,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPRORVD": {
@@ -6899,6 +7817,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6906,6 +7825,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6913,6 +7833,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6920,6 +7841,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6927,6 +7849,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6934,6 +7857,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPRORVQ": {
@@ -6943,6 +7867,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6950,6 +7875,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6957,6 +7883,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6964,6 +7891,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6971,6 +7899,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RotateRight",
@@ -6978,6 +7907,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSADBW": {
@@ -6987,6 +7917,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SumAbsDiff",
@@ -6994,6 +7925,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SumAbsDiff",
@@ -7001,6 +7933,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHLDD": {
@@ -7010,6 +7943,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7017,6 +7951,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7024,6 +7959,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7031,6 +7967,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7038,6 +7975,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7045,6 +7983,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHLDQ": {
@@ -7054,6 +7993,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7061,6 +8001,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7068,6 +8009,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7075,6 +8017,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7082,6 +8025,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7089,6 +8033,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHLDVD": {
@@ -7098,6 +8043,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7105,6 +8051,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7112,6 +8059,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7119,6 +8067,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7126,6 +8075,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7133,6 +8083,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPSHLDVQ": {
@@ -7142,6 +8093,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7149,6 +8101,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7156,6 +8109,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7163,6 +8117,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7170,6 +8125,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7177,6 +8133,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPSHLDVW": {
@@ -7186,6 +8143,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7193,6 +8151,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7200,6 +8159,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7207,6 +8167,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7214,6 +8175,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftLeftConcat",
@@ -7221,6 +8183,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPSHLDW": {
@@ -7230,6 +8193,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7237,6 +8201,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7244,6 +8209,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7251,6 +8217,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7258,6 +8225,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeftConcat",
@@ -7265,6 +8233,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHRDD": {
@@ -7274,6 +8243,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7281,6 +8251,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7288,6 +8259,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7295,6 +8267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7302,6 +8275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7309,6 +8283,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHRDQ": {
@@ -7318,6 +8293,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7325,6 +8301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7332,6 +8309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7339,6 +8317,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7346,6 +8325,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7353,6 +8333,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHRDVD": {
@@ -7362,6 +8343,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7369,6 +8351,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7376,6 +8359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7383,6 +8367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7390,6 +8375,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7397,6 +8383,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPSHRDVQ": {
@@ -7406,6 +8393,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7413,6 +8401,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7420,6 +8409,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7427,6 +8417,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7434,6 +8425,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7441,6 +8433,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPSHRDVW": {
@@ -7450,6 +8443,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7457,6 +8451,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7464,6 +8459,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7471,6 +8467,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7478,6 +8475,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 		{
 			Name:       "ShiftRightConcat",
@@ -7485,6 +8483,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op3",
 			ConstImm:   "",
+			ResInArg0:  true,
 		},
 	},
 	"VPSHRDW": {
@@ -7494,6 +8493,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7501,6 +8501,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7508,6 +8509,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7515,6 +8517,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7522,6 +8525,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRightConcat",
@@ -7529,6 +8533,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512VBMI2",
 			Shape:      "op2Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSHUFB": {
@@ -7538,6 +8543,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "PermuteOrZero",
@@ -7545,6 +8551,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "PermuteOrZeroGrouped",
@@ -7552,6 +8559,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "PermuteOrZeroGrouped",
@@ -7559,6 +8567,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "PermuteOrZeroGrouped",
@@ -7566,6 +8575,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "PermuteOrZeroGrouped",
@@ -7573,6 +8583,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSIGNB": {
@@ -7582,6 +8593,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CopySign",
@@ -7589,6 +8601,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSIGND": {
@@ -7598,6 +8611,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CopySign",
@@ -7605,6 +8619,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSIGNW": {
@@ -7614,6 +8629,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CopySign",
@@ -7621,6 +8637,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSLLD": {
@@ -7630,6 +8647,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7637,6 +8655,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7644,6 +8663,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7651,6 +8671,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7658,6 +8679,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7665,6 +8687,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSLLQ": {
@@ -7674,6 +8697,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7681,6 +8705,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7688,6 +8713,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7695,6 +8721,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7702,6 +8729,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7709,6 +8737,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSLLVD": {
@@ -7718,6 +8747,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7725,6 +8755,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7732,6 +8763,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7739,6 +8771,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7746,6 +8779,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7753,6 +8787,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSLLVQ": {
@@ -7762,6 +8797,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7769,6 +8805,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7776,6 +8813,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7783,6 +8821,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7790,6 +8829,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7797,6 +8837,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSLLVW": {
@@ -7806,6 +8847,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7813,6 +8855,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7820,6 +8863,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7827,6 +8871,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7834,6 +8879,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftLeft",
@@ -7841,6 +8887,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSLLW": {
@@ -7850,6 +8897,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7857,6 +8905,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7864,6 +8913,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7871,6 +8921,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7878,6 +8929,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllLeft",
@@ -7885,6 +8937,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRAD": {
@@ -7894,6 +8947,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -7901,6 +8955,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -7908,6 +8963,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRAQ": {
@@ -7917,6 +8973,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -7924,6 +8981,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -7931,6 +8989,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRAVD": {
@@ -7940,6 +8999,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -7947,6 +9007,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -7954,6 +9015,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRAVQ": {
@@ -7963,6 +9025,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -7970,6 +9033,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -7977,6 +9041,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRAVW": {
@@ -7986,6 +9051,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -7993,6 +9059,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8000,6 +9067,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRAW": {
@@ -8009,6 +9077,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8016,6 +9085,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8023,6 +9093,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRLD": {
@@ -8032,6 +9103,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8039,6 +9111,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8046,6 +9119,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRLQ": {
@@ -8055,6 +9129,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8062,6 +9137,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8069,6 +9145,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRLVD": {
@@ -8078,6 +9155,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8085,6 +9163,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8092,6 +9171,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRLVQ": {
@@ -8101,6 +9181,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8108,6 +9189,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8115,6 +9197,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRLVW": {
@@ -8124,6 +9207,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8131,6 +9215,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftRight",
@@ -8138,6 +9223,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSRLW": {
@@ -8147,6 +9233,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8154,6 +9241,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ShiftAllRight",
@@ -8161,6 +9249,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2VecAsScalar",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBB": {
@@ -8170,6 +9259,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8177,6 +9267,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8184,6 +9275,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8191,6 +9283,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8198,6 +9291,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8205,6 +9299,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBD": {
@@ -8214,6 +9309,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8221,6 +9317,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8228,6 +9325,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8235,6 +9333,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8242,6 +9341,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8249,6 +9349,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBQ": {
@@ -8258,6 +9359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8265,6 +9367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8272,6 +9375,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8279,6 +9383,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8286,6 +9391,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8293,6 +9399,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBSB": {
@@ -8302,6 +9409,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8309,6 +9417,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8316,6 +9425,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBSW": {
@@ -8325,6 +9435,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8332,6 +9443,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8339,6 +9451,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBUSB": {
@@ -8348,6 +9461,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8355,6 +9469,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8362,6 +9477,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBUSW": {
@@ -8371,6 +9487,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8378,6 +9495,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "SubSaturated",
@@ -8385,6 +9503,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPSUBW": {
@@ -8394,6 +9513,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8401,6 +9521,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8408,6 +9529,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8415,6 +9537,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8422,6 +9545,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -8429,6 +9553,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPUNPCKHDQ": {
@@ -8438,6 +9563,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHi",
@@ -8445,6 +9571,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8452,6 +9579,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8459,6 +9587,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8466,6 +9595,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8473,6 +9603,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPUNPCKHQDQ": {
@@ -8482,6 +9613,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHi",
@@ -8489,6 +9621,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8496,6 +9629,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8503,6 +9637,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8510,6 +9645,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8517,6 +9653,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPUNPCKHWD": {
@@ -8526,6 +9663,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHi",
@@ -8533,6 +9671,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8540,6 +9679,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8547,6 +9687,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8554,6 +9695,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveHiGrouped",
@@ -8561,6 +9703,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPUNPCKLDQ": {
@@ -8570,6 +9713,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLo",
@@ -8577,6 +9721,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8584,6 +9729,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8591,6 +9737,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8598,6 +9745,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8605,6 +9753,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPUNPCKLQDQ": {
@@ -8614,6 +9763,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLo",
@@ -8621,6 +9771,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8628,6 +9779,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8635,6 +9787,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8642,6 +9795,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8649,6 +9803,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPUNPCKLWD": {
@@ -8658,6 +9813,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLo",
@@ -8665,6 +9821,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8672,6 +9829,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8679,6 +9837,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8686,6 +9845,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "InterleaveLoGrouped",
@@ -8693,6 +9853,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPXOR": {
@@ -8702,6 +9863,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8709,6 +9871,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8716,6 +9879,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8723,6 +9887,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8730,6 +9895,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8737,6 +9903,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8744,6 +9911,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8751,6 +9919,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8758,6 +9927,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8765,6 +9935,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8772,6 +9943,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8779,6 +9951,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8786,6 +9959,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8793,6 +9967,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8800,6 +9975,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8807,6 +9983,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX2",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPXORD": {
@@ -8816,6 +9993,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8823,6 +10001,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8830,6 +10009,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8837,6 +10017,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8844,6 +10025,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8851,6 +10033,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VPXORQ": {
@@ -8860,6 +10043,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Xor",
@@ -8867,6 +10051,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRCP14PD": {
@@ -8876,6 +10061,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Reciprocal",
@@ -8883,6 +10069,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Reciprocal",
@@ -8890,6 +10077,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRCP14PS": {
@@ -8899,6 +10087,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRCPPS": {
@@ -8908,6 +10097,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Reciprocal",
@@ -8915,6 +10105,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VREDUCEPD": {
@@ -8924,6 +10115,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaledResidue",
@@ -8931,6 +10123,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaledResidue",
@@ -8938,6 +10131,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaledResidue",
@@ -8945,6 +10139,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaledResidue",
@@ -8952,6 +10147,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaledResidue",
@@ -8959,6 +10155,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaledResidue",
@@ -8966,6 +10163,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaledResidue",
@@ -8973,6 +10171,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaledResidue",
@@ -8980,6 +10179,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaledResidue",
@@ -8987,6 +10187,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaledResidue",
@@ -8994,6 +10195,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaledResidue",
@@ -9001,6 +10203,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VREDUCEPS": {
@@ -9010,6 +10213,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaledResidue",
@@ -9017,6 +10221,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaledResidue",
@@ -9024,6 +10229,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaledResidue",
@@ -9031,6 +10237,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaledResidue",
@@ -9038,6 +10245,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaledResidue",
@@ -9045,6 +10253,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaledResidue",
@@ -9052,6 +10261,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaledResidue",
@@ -9059,6 +10269,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaledResidue",
@@ -9066,6 +10277,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaledResidue",
@@ -9073,6 +10285,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaledResidue",
@@ -9080,6 +10293,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaledResidue",
@@ -9087,6 +10301,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRNDSCALEPD": {
@@ -9096,6 +10311,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaled",
@@ -9103,6 +10319,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaled",
@@ -9110,6 +10327,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaled",
@@ -9117,6 +10335,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaled",
@@ -9124,6 +10343,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaled",
@@ -9131,6 +10351,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaled",
@@ -9138,6 +10359,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaled",
@@ -9145,6 +10367,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaled",
@@ -9152,6 +10375,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaled",
@@ -9159,6 +10383,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaled",
@@ -9166,6 +10391,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaled",
@@ -9173,6 +10399,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRNDSCALEPS": {
@@ -9182,6 +10409,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaled",
@@ -9189,6 +10417,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "CeilScaled",
@@ -9196,6 +10425,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaled",
@@ -9203,6 +10433,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaled",
@@ -9210,6 +10441,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "FloorScaled",
@@ -9217,6 +10449,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaled",
@@ -9224,6 +10457,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaled",
@@ -9231,6 +10465,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEvenScaled",
@@ -9238,6 +10473,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaled",
@@ -9245,6 +10481,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaled",
@@ -9252,6 +10489,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "TruncScaled",
@@ -9259,6 +10497,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1Imm8",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VROUNDPD": {
@@ -9268,6 +10507,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Ceil",
@@ -9275,6 +10515,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Floor",
@@ -9282,6 +10523,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Floor",
@@ -9289,6 +10531,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEven",
@@ -9296,6 +10539,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEven",
@@ -9303,6 +10547,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Trunc",
@@ -9310,6 +10555,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "3",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Trunc",
@@ -9317,6 +10563,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "3",
+			ResInArg0:  false,
 		},
 	},
 	"VROUNDPS": {
@@ -9326,6 +10573,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Ceil",
@@ -9333,6 +10581,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "2",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Floor",
@@ -9340,6 +10589,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Floor",
@@ -9347,6 +10597,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "1",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEven",
@@ -9354,6 +10605,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "RoundToEven",
@@ -9361,6 +10613,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "0",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Trunc",
@@ -9368,6 +10621,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "3",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Trunc",
@@ -9375,6 +10629,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "3",
+			ResInArg0:  false,
 		},
 	},
 	"VRSQRT14PD": {
@@ -9384,6 +10639,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ReciprocalSqrt",
@@ -9391,6 +10647,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ReciprocalSqrt",
@@ -9398,6 +10655,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRSQRT14PS": {
@@ -9407,6 +10665,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VRSQRTPS": {
@@ -9416,6 +10675,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "ReciprocalSqrt",
@@ -9423,6 +10683,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VSCALEFPD": {
@@ -9432,6 +10693,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Scale",
@@ -9439,6 +10701,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Scale",
@@ -9446,6 +10709,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VSCALEFPS": {
@@ -9455,6 +10719,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Scale",
@@ -9462,6 +10727,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Scale",
@@ -9469,6 +10735,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VSQRTPD": {
@@ -9478,6 +10745,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sqrt",
@@ -9485,6 +10753,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sqrt",
@@ -9492,6 +10761,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VSQRTPS": {
@@ -9501,6 +10771,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sqrt",
@@ -9508,6 +10779,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sqrt",
@@ -9515,6 +10787,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op1",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VSUBPD": {
@@ -9524,6 +10797,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -9531,6 +10805,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -9538,6 +10813,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 	"VSUBPS": {
@@ -9547,6 +10823,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -9554,6 +10831,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 		{
 			Name:       "Sub",
@@ -9561,6 +10839,7 @@ var opMap = map[string][]goAPISignature{
 			CPUFeature: "AVX512",
 			Shape:      "op2",
 			ConstImm:   "",
+			ResInArg0:  false,
 		},
 	},
 }
