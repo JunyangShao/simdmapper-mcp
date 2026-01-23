@@ -5,18 +5,11 @@
 package mcp
 
 import (
-	"context"
 	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
-
-	"github.com/modelcontextprotocol/go-sdk/mcp"
 )
-
-type simdMapperParams struct {
-	Asm string `json:"asm" jsonschema:"the assembly instruction to be mapped to simd intrinsics."`
-}
 
 type simdOperand struct {
 	kind string
@@ -161,6 +154,11 @@ func (m *mapper) emitGoCode() string {
 		m.cpuFeature, m.ops[len(m.ops)-1], m.ops[0], m.name,
 		strings.Join(m.ops[1:len(m.ops)-1], ", "), mask, strings.Join(m.vectorComments, ", "))
 }
+
+var generalDoc string = `Missing a direct translation for this instruction.
+But similar instructions might be available. Please check the documentation at: https://pkg.go.dev/simd/archsimd
+
+Or if you are looking for move instructions, consider using Load$VectorType series of functions (LoadFloat32x4, LoadFloat64x2, etc.)`
 
 // SimdMapper parses the assembly instruction and returns the corresponding Go code.
 func SimdMapper(query string) string {
@@ -352,17 +350,7 @@ func SimdMapper(query string) string {
 		}
 	}
 	if len(validCandidates) == 0 {
-		return "Missing a direct translation for this instruction, but similar instructions might be available. Please check the documentation at: https://pkg.go.dev/simd/archsimd"
+		return generalDoc
 	}
 	return strings.Join(validCandidates, "\n// Or\n")
-}
-
-func SimdMapperHandler(ctx context.Context, req *mcp.CallToolRequest, params simdMapperParams) (*mcp.CallToolResult, any, error) {
-	query := params.Asm
-	if len(query) == 0 {
-		return nil, nil, fmt.Errorf("empty query")
-	}
-	return &mcp.CallToolResult{
-		Content: []mcp.Content{&mcp.TextContent{Text: SimdMapper(query)}},
-	}, nil, nil
 }
